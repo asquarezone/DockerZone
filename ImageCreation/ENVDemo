@@ -1,0 +1,5 @@
+FROM ubuntu:16.04
+MAINTAINER shaik.khaja.ibrahim@live.in
+RUN apt-get update && apt-get install iputils-ping -y
+ENV START_TEXT="Hello"
+CMD ["sh", "-c", "echo ${START_TEXT}" ]
