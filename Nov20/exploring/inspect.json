@@ -1,0 +1,108 @@
+[
+    {
+        "Id": "sha256:64861c0af3dce5f5a7916fcf178f0f01c88664abffe12cc698b47dc777bc4fc2",
+        "RepoTags": [
+            "spc:slim"
+        ],
+        "RepoDigests": [],
+        "Parent": "sha256:fad8102acf11fa5461ee2b10782511368420f07441f2455d9b9b93b57ee2f620",
+        "Comment": "",
+        "Created": "2020-11-01T13:48:20.06181976Z",
+        "Container": "ea91dbd2821d8a80b241240846a607ff4920e988f7d8ded51d76a40daa9cd734",
+        "ContainerConfig": {
+            "Hostname": "ea91dbd2821d",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "JAVA_HOME=/usr/local/openjdk-8",
+                "JAVA_VERSION=8u272"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "CMD [\"java\" \"-jar\" \"spring-petclinic.jar\"]"
+            ],
+            "Image": "sha256:fad8102acf11fa5461ee2b10782511368420f07441f2455d9b9b93b57ee2f620",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "author": "khaja"
+            }
+        },
+        "DockerVersion": "19.03.11",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8080/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "JAVA_HOME=/usr/local/openjdk-8",
+                "JAVA_VERSION=8u272"
+            ],
+            "Cmd": [
+                "java",
+                "-jar",
+                "spring-petclinic.jar"
+            ],
+            "Image": "sha256:fad8102acf11fa5461ee2b10782511368420f07441f2455d9b9b93b57ee2f620",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "author": "khaja"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 335677567,
+        "VirtualSize": 335677567,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/bef92aeed615618f758d2e19e67e05b5f2ed53e41702f8df80a6f46b728194d1/diff:/var/lib/docker/overlay2/bdcb3d1cd55d8aa4203cce114956344df511d938daafdaf23f03f1bbd54e0379/diff:/var/lib/docker/overlay2/4a0382c9cff5b25a198806407f38ba09d3f5aee103c4ecf274697713d2f85f04/diff:/var/lib/docker/overlay2/420137bdd69ca296b6c311944a5d751fddaaf1fa9699143e73f97a40217fdea1/diff",
+                "MergedDir": "/var/lib/docker/overlay2/17d5b68b5ff289d437a2716f4fcfac828d9400da7cf6e151d8369e6fae477f7e/merged",
+                "UpperDir": "/var/lib/docker/overlay2/17d5b68b5ff289d437a2716f4fcfac828d9400da7cf6e151d8369e6fae477f7e/diff",
+                "WorkDir": "/var/lib/docker/overlay2/17d5b68b5ff289d437a2716f4fcfac828d9400da7cf6e151d8369e6fae477f7e/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:d0fe97fa8b8cefdffcef1d62b65aba51a6c87b6679628a2b50fc6a7a579f764c",
+                "sha256:fee20f1b745ddb7c348b6da5be73e40ffc012778353795c5deaef140a5f47d25",
+                "sha256:0c45279c38b9ea7bbd014a5c30a4394e00c766ffa0b5254cdd71cf2e5431664f",
+                "sha256:71de13106f17f306fb3e350e49495d8309048cc0bbdd7f0c6b2d9fbf29821e47",
+                "sha256:0c9dd44487b9f02b4f569bea12df8ed7d0870ab828a5941b772a2fcf16c3160e"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2020-11-01T13:48:20.084589026Z"
+        }
+    }
+]
