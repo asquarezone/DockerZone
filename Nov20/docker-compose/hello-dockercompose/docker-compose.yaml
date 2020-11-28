@@ -1,0 +1,17 @@
+---
+version: "3.8"
+services:
+  gameoflife:
+    build:
+      context: gameoflife/
+    ports:
+      - "32765:8080"
+  spring-petclinic:
+    build:
+      context: spring-petclinic/
+    ports:
+      - "32766:8080"
+  mysql:
+    image: mysql:8
+    ports:
+      - "3306:3306"
