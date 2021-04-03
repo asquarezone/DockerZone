@@ -1,0 +1,10 @@
+version: '3'
+services:
+  httpd:
+    image: httpd:latest
+    ports: 
+      - 80:80
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8080:80
