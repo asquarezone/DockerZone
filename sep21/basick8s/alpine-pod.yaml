@@ -7,3 +7,5 @@ spec:
   containers:
     - name: alpine
       image: alpine
+      command:
+        - sleep 1d
