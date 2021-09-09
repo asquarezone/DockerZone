@@ -7,6 +7,10 @@ spec:
   containers:
     - name: nginx-container
       image: nginx:1.21.1
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 80
       ports:
         - containerPort: 80
           protocol: TCP
