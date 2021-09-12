@@ -12,11 +12,11 @@ spec:
     metadata:
       labels:
         app: myapp
-        version: v1
+        version: v2
     spec: 
       containers:
         - name: myapp-cont
-          image: shaikkhajaibrahim/myapp:1.0
+          image: shaikkhajaibrahim/myapp:2.0
           ports:
             - name: http
               containerPort: 80
