@@ -8,15 +8,20 @@ spec:
   selector:
     matchLabels:
       app: myapp
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
   template:
     metadata:
       labels:
         app: myapp
-        version: v2
+        version: v3
     spec: 
       containers:
         - name: myapp-cont
-          image: shaikkhajaibrahim/myapp:2.0
+          image: shaikkhajaibrahim/myapp:3.0
           ports:
             - name: http
               containerPort: 80
