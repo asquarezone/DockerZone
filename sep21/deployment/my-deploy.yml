@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+        version: v1
+    spec: 
+      containers:
+        - name: myapp-cont
+          image: shaikkhajaibrahim/myapp:1.0
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
