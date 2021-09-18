@@ -10,3 +10,4 @@ data:
   retries: "5"
   ui.properties.filename: 'ui.properties'
   debug: verbose
+  download_url: "https://directdevops.blog"
