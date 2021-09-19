@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-sel-neg-demo
+spec:
+  containers:
+    - image: alpine
+      name: alpine-cont
+      args:
+        - /bin/sh
+        - -c
+        - sleep 1d
+  nodeSelector:
+    procesor: intel
