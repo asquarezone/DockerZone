@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basic-pod
+  labels:
+    app: basic
+    env: prod
+spec:
+  containers:
+    - image: alpine
+      name: alpine-cont
+      args:
+        - /bin/sh
+        - -c
+        - sleep 1d
