@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-affinity
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: env
+                operator: In
+                values:
+                  - prod
+          topologyKey: topology.kubernetes.io/region
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - basic
+            topologyKey: topology.kubernetes.io/region
+  containers:
+    - image: alpine
+      name: alpine-cont
+      args:
+        - /bin/sh
+        - -c
+        - sleep 1d
