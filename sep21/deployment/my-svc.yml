@@ -4,12 +4,11 @@ kind: Service
 metadata:
   name: my-svc
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: myapp
   ports:
     - protocol: TCP
       targetPort: 80
       port: 80
-      nodePort: 32001
-    
+         
