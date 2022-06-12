@@ -4,3 +4,5 @@ LABEL author=khaja
 LABEL month=june
 RUN apk update
 RUN apk add python3
+# sleep 1day
+CMD ["sleep", "1d"]
