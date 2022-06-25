@@ -9,3 +9,6 @@ def index():
     server_ip = socket.gethostbyname(socket.gethostname())
     fqdn = socket.getfqdn()
     return f"Requester IP: {ip_address} server ip: {server_ip} fqdn: {fqdn}"
+
+
+app.run(host="0.0.0.0", port=5000)
