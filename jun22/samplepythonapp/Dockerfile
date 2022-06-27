@@ -1,6 +1,6 @@
 FROM python:3.9-alpine
 LABEL author "khaja"
-RUN useradd -D qtuser && mkdir /home/qtuser/sample
+RUN adduser -D qtuser && mkdir /home/qtuser/sample
 USER qtuser
 WORKDIR /home/qtuser/sample
 ADD . /home/qtuser/sample/
