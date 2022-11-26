@@ -8,6 +8,17 @@ services:
         published: 8081
         protocol: tcp
         mode: host
+    networks:
+      - webserver-net
+networks:
+  webserver-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.100.0/24
+
+
 
       
   
