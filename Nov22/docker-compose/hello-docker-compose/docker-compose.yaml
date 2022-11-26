@@ -10,6 +10,20 @@ services:
         mode: host
     networks:
       - webserver-net
+  dbserver:
+    image: mysql:5.6
+    ports:
+      - target: 3306
+        published: 8082
+        protocol: tcp
+        mode: host
+    networks:
+      - webserver-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=directdevops
+      - MYSQL_PASSWORD=directdevops
 networks:
   webserver-net:
     driver: bridge
