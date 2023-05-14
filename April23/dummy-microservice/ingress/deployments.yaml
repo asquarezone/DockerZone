@@ -1,0 +1,112 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: identity-deploy
+spec:
+  minReadySeconds: 5
+  replicas: 3
+  selector:
+    matchLabels:
+      app: identity
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: identity-pod
+      labels:
+        app: identity
+        version: "1.0.0"
+    spec:
+      containers:
+        - name: identity
+          image: shaikkhajaibrahim/dummy-id-srv:1.0.0
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basket-deploy
+spec:
+  minReadySeconds: 5
+  replicas: 3
+  selector:
+    matchLabels:
+      app: basket
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: basket-pod
+      labels:
+        app: basket
+        version: "1.0.0"
+    spec:
+      containers:
+        - name: basket
+          image: shaikkhajaibrahim/dummy-basket-srv:1.0.0
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-deploy
+spec:
+  minReadySeconds: 5
+  replicas: 3
+  selector:
+    matchLabels:
+      app: catalog
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: catalog-pod
+      labels:
+        app: catalog
+        version: "1.0.0"
+    spec:
+      containers:
+        - name: catalog
+          image: shaikkhajaibrahim/dummy-ctlg-srv:1.0.0
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-deploy
+spec:
+  minReadySeconds: 5
+  replicas: 3
+  selector:
+    matchLabels:
+      app: order
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: order-pod
+      labels:
+        app: order
+        version: "1.0.0"
+    spec:
+      containers:
+        - name: order
+          image: shaikkhajaibrahim/dummy-ord-srv:1.0.0
+          ports:
+            - containerPort: 80
