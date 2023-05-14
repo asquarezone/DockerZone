@@ -1,0 +1,41 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ecomm-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /identity(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: identity-svc
+                port:
+                  number: 80
+          - path: /order(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: order-svc
+                port:
+                  number: 80
+          - path: /basket(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: basket-svc
+                port:
+                  number: 80
+          - path: /catalog(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: catalog-svc
+                port:
+                  number: 80
