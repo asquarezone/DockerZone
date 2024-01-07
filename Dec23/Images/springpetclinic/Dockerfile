@@ -7,6 +7,7 @@ ARG GROUP="spc"
 ARG UID=1000
 ARG GID=1000
 ARG HOMEDIR="/spc"
+ENV VERBOSE=module
 # creates a new group and user
 RUN addgroup -g ${GID} ${GROUP} \
     && adduser -h ${HOMEDIR} -u ${UID} -G ${GROUP} -s /bin/bash -D ${USER}
@@ -16,4 +17,4 @@ USER ${USER}
 ADD --chown=${USER}:${GROUP} ${DOWNLOAD_URL} ${HOMEDIR}/spring-petclinic.jar
 WORKDIR ${HOMEDIR}
 EXPOSE 8080
-CMD ["java", "-jar", "spring-petclinic.jar"]
+CMD java -verbose:${VERBOSE} -jar spring-petclinic.jar
