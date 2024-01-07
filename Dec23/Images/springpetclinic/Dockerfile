@@ -1,12 +1,19 @@
 FROM amazoncorretto:17-alpine3.17-jdk
 LABEL author="khaja" 
 LABEL project="learning"
-EXPOSE 8080
+ARG DOWNLOAD_URL="https://referenceapplicationskhaja.s3.us-west-2.amazonaws.com/spring-petclinic-3.1.0-SNAPSHOT.jar"
+ARG USER="spc"
+ARG GROUP="spc"
+ARG UID=1000
+ARG GID=1000
+ARG HOMEDIR="/spc"
 # creates a new group and user
-RUN addgroup -g 1000 spc && adduser -h "/spc" -u 1000 -G spc -s /bin/bash -D spc
+RUN addgroup -g ${GID} ${GROUP} \
+    && adduser -h ${HOMEDIR} -u ${UID} -G ${GROUP} -s /bin/bash -D ${USER}
 # switching to user spc
-USER spc
+USER ${USER}
 # Download the file
-ADD --chown=spc:spc https://referenceapplicationskhaja.s3.us-west-2.amazonaws.com/spring-petclinic-3.1.0-SNAPSHOT.jar /spc/spring-petclinic-3.1.0-SNAPSHOT.jar
-WORKDIR /spc
-CMD ["java", "-jar", "spring-petclinic-3.1.0-SNAPSHOT.jar"]
+ADD --chown=${USER}:${GROUP} ${DOWNLOAD_URL} ${HOMEDIR}/spring-petclinic.jar
+WORKDIR ${HOMEDIR}
+EXPOSE 8080
+CMD ["java", "-jar", "spring-petclinic.jar"]
