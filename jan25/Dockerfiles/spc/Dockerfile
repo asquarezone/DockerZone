@@ -4,6 +4,7 @@ LABEL author="khaja"
 RUN useradd -m -d /apps -s /bin/bash spc
 USER spc
 ADD --chown=spc:spc https://referenceappslt.s3.ap-south-1.amazonaws.com/spring-petclinic-3.3.0-SNAPSHOT.jar /apps/spring-petclinic-3.3.0-SNAPSHOT.jar
+WORKDIR /apps
 EXPOSE 8080
 # CMD Executes when the container is started
-CMD [ "java", "-jar", "/apps/spring-petclinic-3.3.0-SNAPSHOT.jar" ]
+CMD [ "java", "-jar", "spring-petclinic-3.3.0-SNAPSHOT.jar" ]
